@@ -158,7 +158,7 @@ const Log = () => {
   }
 
   return (
-    <div>
+    <div className="mt-2">
       <div className="flex gap-4 mx-4">
         <Select value={filterType} onValueChange={(value) => {
           setFilterType(value);
@@ -184,7 +184,7 @@ const Log = () => {
         )}
       </div>
 
-      <ScrollArea className="shadow-lg h-[calc(100vh-6rem)] relative m-4 bg-white rounded-lg mt-4">
+      <ScrollArea className="shadow-lg h-[calc(100vh-8rem)] relative m-4 bg-white rounded-lg mt-4">
         <Table>
           <TableHeader className="sticky top-0 bg-primary">
             <TableRow className="mx-0">
