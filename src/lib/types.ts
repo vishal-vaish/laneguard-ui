@@ -38,3 +38,8 @@ export interface VehicleMonitorLog {
   exitCameraIpAddress: string;
   status: StatusType;
 }
+
+export enum AlertType {
+  SUCCESS = "SUCCESS",
+  FAILURE = "FAILURE"
+}

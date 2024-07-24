@@ -5,6 +5,8 @@ import {Client} from "@stomp/stompjs";
 import {formatDateTime} from "@/lib/utils";
 import CloseIcon from "@/components/Icon/CloseIcon";
 import {ALERT_TOPIC, WEBSOCKET_URL} from "@/lib/queries";
+import classNames from "classnames";
+import {AlertType} from "@/lib/types";
 
 export interface AlertMessage {
   type: string;
@@ -56,11 +58,13 @@ const Navbar = () => {
 
   if (!latestMessage) return (<div className="h-[1rem]"></div>);
 
+  const backgroundColor = latestMessage.type === AlertType.SUCCESS ? "bg-green-500" : "bg-red-500";
+
   return (
     <div
-      className="bg-red-500 min-w-full p-1 min-h-[3rem] h-[3rem] text-white relative flex items-center justify-center">
+      className={classNames(backgroundColor,
+        "min-w-full p-1 min-h-[3rem] h-[3rem] text-white relative flex items-center justify-center")}>
       <div className="absolute right-1 cursor-pointer p-2" onClick={clearMessages}><CloseIcon/></div>
-      <span className="mr-2">{latestMessage.type}:</span>
       {latestMessage.content} ({formatDateTime(latestMessage?.timestamp)})
     </div>
   );
