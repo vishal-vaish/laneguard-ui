@@ -30,9 +30,9 @@ const Dashboard = () => {
       console.log('Connected to WebSocket');
       client.subscribe(MONITOR_TOPIC, (alert) => {
         try {
-          const newMessage: VehicleMonitorLog = JSON.parse(alert.body);
+          const newMessage = JSON.parse(alert.body);
           console.log('Received message:', newMessage);
-          setVehicleMonitorLog((prevMessages) => [...prevMessages, newMessage]);
+          setVehicleMonitorLog(newMessage);
         } catch (error) {
           console.error('Error parsing message:', error);
         }
