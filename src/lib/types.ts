@@ -10,6 +10,8 @@ export interface GateDataType {
   name: string;
   entryCameraId: string;
   exitCameraId: string;
+  entryCameraIpAddress: string;
+  exitCameraIpAddress: string;
 }
 export type StatusType = 'IN_PROGRESS' | 'COMPLETED';
 

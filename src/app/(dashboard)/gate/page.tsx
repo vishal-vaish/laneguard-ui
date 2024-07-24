@@ -71,8 +71,8 @@ const Gate = () => {
             <TableRow className="mx-0">
               <TableHead className="text-center text-white">Id</TableHead>
               <TableHead className="text-center text-white">Name</TableHead>
-              <TableHead className="text-center text-white">Entry Camera Id</TableHead>
-              <TableHead className="text-center text-white">Exit Camera Id</TableHead>
+              <TableHead className="text-center text-white">Entry Camera</TableHead>
+              <TableHead className="text-center text-white">Exit Camera</TableHead>
               <TableHead className="text-center w-[100px] text-white">Action</TableHead>
             </TableRow>
           </TableHeader>
@@ -81,8 +81,8 @@ const Gate = () => {
               <TableRow key={data.id}>
                 <TableCell className="text-center">{data.id}</TableCell>
                 <TableCell className="text-center">{data.name}</TableCell>
-                <TableCell className="text-center">{data.entryCameraId}</TableCell>
-                <TableCell className="text-center">{data.exitCameraId}</TableCell>
+                <TableCell className="text-center">{data.entryCameraIpAddress}</TableCell>
+                <TableCell className="text-center">{data.exitCameraIpAddress}</TableCell>
                 <TableCell className="text-center w-[100px]">
                   <div className="flex">
                     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
