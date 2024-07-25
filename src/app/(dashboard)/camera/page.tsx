@@ -69,7 +69,7 @@ const Camera = () => {
         <Table>
           <TableHeader className="sticky top-0 bg-primary">
             <TableRow className="mx-0">
-              <TableHead className="text-center text-white">Id</TableHead>
+              <TableHead className="text-center text-white">Sr. No.</TableHead>
               <TableHead className="text-center text-white">Ip Address</TableHead>
               <TableHead className="text-center text-white">Mac Address</TableHead>
               <TableHead className="text-center text-white">Type</TableHead>
@@ -77,14 +77,16 @@ const Camera = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {cameraData.map((data) => (
+            {cameraData.map((data, index) => (
               <TableRow key={data.id}>
-                <TableCell className="text-center">{data.id}</TableCell>
+                <TableCell className="text-center">
+                  {String(index + 1).padStart(4, '0')}
+                </TableCell>
                 <TableCell className="text-center">{data.ipAddress}</TableCell>
                 <TableCell className="text-center">{data.macAddress}</TableCell>
                 <TableCell className="text-center">{data.type}</TableCell>
                 <TableCell className="text-center w-[100px]">
-                  <div className="flex">
+                  <div className="flex justify-center">
                     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                       <DialogTrigger asChild>
                         <Button variant="ghost" onClick={() => openDialogForUpdate(data)}>
