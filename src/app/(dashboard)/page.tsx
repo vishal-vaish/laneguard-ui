@@ -32,7 +32,7 @@ const Dashboard = () => {
         try {
           const newMessage = JSON.parse(alert.body);
           console.log('Received message:', newMessage);
-          if (!newMessage) {
+          if (!newMessage || !Array.isArray(newMessage)) {
             console.warn('Received invalid or empty message from WebSocket');
             return;
           }

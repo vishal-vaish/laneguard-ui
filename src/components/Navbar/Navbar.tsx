@@ -31,7 +31,7 @@ const Navbar = () => {
         try {
           const newMessage: AlertMessage = JSON.parse(message.body);
           console.log('Received message:', newMessage);
-          if (!newMessage || !Array.isArray(newMessage)) {
+          if (!newMessage) {
             console.warn('Received invalid or empty message from WebSocket');
             return;
           }
