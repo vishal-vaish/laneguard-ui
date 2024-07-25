@@ -104,7 +104,7 @@ export const getAllVehicleAccess = async (
 
 export const getActiveVehicleAccess = async (): Promise<any[]> => {
   try {
-    const response = await axios.get(`${baseUrl}/monitor/active`);
+    const response = await axios.get(`${baseUrl}/logs/active`);
     return response.data;
   } catch (error) {
     console.error('Error fetching gate data:', error);
