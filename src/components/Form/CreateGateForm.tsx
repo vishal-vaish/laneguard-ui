@@ -21,7 +21,11 @@ import {
   getAllAvailableExitCameras,
   updateGate,
 } from "@/lib/queries";
-import {CameraDataType, GateDataType} from "@/lib/types";
+import {
+  CameraDataType,
+  CreateGateDataType,
+  GateDataType
+} from "@/lib/types";
 import Loader from "@/components/Loader";
 import {notyf} from "@/lib/notyf";
 
@@ -110,7 +114,7 @@ const CreateGateForm = ({data, onDialogClose}: Props) => {
     }
     setIsLoading(true);
 
-    const gateData: GateDataType = {
+    const gateData: CreateGateDataType = {
       id: data ? data.id : null,
       name,
       entryCameraId,

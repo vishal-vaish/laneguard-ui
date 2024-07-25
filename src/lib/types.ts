@@ -13,6 +13,13 @@ export interface GateDataType {
   entryCameraIpAddress: string;
   exitCameraIpAddress: string;
 }
+
+export interface CreateGateDataType {
+  id: null;
+  name: string;
+  entryCameraId: string;
+  exitCameraId: string;
+}
 export type StatusType = 'IN_PROGRESS' | 'COMPLETED';
 
 export interface VehicleAccessLog {

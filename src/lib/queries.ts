@@ -1,5 +1,5 @@
 import axios from "axios";
-import {CameraDataType, GateDataType} from "@/lib/types";
+import {CameraDataType, CreateGateDataType, GateDataType} from "@/lib/types";
 
 const baseUrl = "http://localhost:8080/api"
 export const WEBSOCKET_URL = 'ws://localhost:8080/lane-guard';
@@ -66,7 +66,7 @@ export const getAllAvailableExitCameras = async (isAvailable:boolean): Promise<a
   }
 };
 
-export const createGate = async (gateData:GateDataType): Promise<any[]> => {
+export const createGate = async (gateData:CreateGateDataType): Promise<any[]> => {
   try {
     const response = await axios.post(`${baseUrl}/gates`,gateData);
     return response.data;
@@ -76,7 +76,7 @@ export const createGate = async (gateData:GateDataType): Promise<any[]> => {
   }
 };
 
-export const updateGate = async (gateData:GateDataType): Promise<any[]> => {
+export const updateGate = async (gateData:CreateGateDataType): Promise<any[]> => {
   try {
     const response = await axios.put(`${baseUrl}/gates/${gateData.id}`,gateData);
     return response.data;
