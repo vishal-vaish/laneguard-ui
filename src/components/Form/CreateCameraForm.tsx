@@ -50,11 +50,15 @@ const CreateCameraForm = ({data, onDialogClose}: Props) => {
       setMacAddress("");
       setType("");
       onDialogClose();
-    } catch (error) {
+    } catch (error:any) {
       {
-        data
-          ? notyf.error("Error while updating camera")
-          : notyf.error("Error while creating camera")
+        if(error && error.response.status === 409) {
+         setErrorMessage(error.response.data.message);
+        } else {
+          data
+            ? notyf.error("Error while updating camera")
+            : notyf.error("Error while creating camera")
+        }
       }
     } finally {
       setIsLoading(false);
