@@ -208,8 +208,10 @@ const Log = () => {
                 <TableCell className="text-center">{data?.exitGate?.name}</TableCell>
                 <TableCell className="text-center">{data.entryCamera.ipAddress}</TableCell>
                 <TableCell className="text-center">{data?.exitCamera?.ipAddress}</TableCell>
-                <TableCell className="flex justify-center text-center">
-                  <div className={`h-4 w-4 rounded-full ${statusIndicator(data.status)}`}/>
+                <TableCell className="text-center">
+                  <div className="flex justify-center">
+                    <div className={`h-4 w-4 rounded-full ${statusIndicator(data.status)}`}/>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

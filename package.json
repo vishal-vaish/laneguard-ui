@@ -20,6 +20,7 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
+    "inputmask": "^5.0.9",
     "lucide-react": "^0.414.0",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
@@ -31,6 +32,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/inputmask": "^5.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

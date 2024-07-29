@@ -26,11 +26,9 @@ const Navbar = () => {
     });
 
     client.onConnect = (frame) => {
-      console.log('Connected: ' + frame);
       client.subscribe(ALERT_TOPIC, (message) => {
         try {
           const newMessage: AlertMessage = JSON.parse(message.body);
-          console.log('Received message:', newMessage);
           if (!newMessage) {
             console.warn('Received invalid or empty message from WebSocket');
             return;
