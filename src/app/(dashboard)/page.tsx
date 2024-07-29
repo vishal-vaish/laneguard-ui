@@ -93,8 +93,10 @@ const Dashboard = () => {
               <TableCell className="text-center">{data?.exitGateName}</TableCell>
               <TableCell className="text-center">{data.entryCameraIpAddress}</TableCell>
               <TableCell className="text-center">{data?.exitCameraIpAddress}</TableCell>
-              <TableCell className="flex justify-center text-center">
-                <div className={`h-4 w-4 rounded-full ${statusIndicator(data.status)}`}/>
+              <TableCell className="text-center">
+                <div className="flex justify-center">
+                  <div className={`h-4 w-4 rounded-full ${statusIndicator(data.status)}`}/>
+                </div>
               </TableCell>
             </TableRow>
           ))}

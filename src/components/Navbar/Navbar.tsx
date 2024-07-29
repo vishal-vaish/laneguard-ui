@@ -62,7 +62,10 @@ const Navbar = () => {
 
   if (!latestMessage) return (<div className="h-[1rem]"></div>);
 
-  const backgroundColor = latestMessage.type === AlertType.SUCCESS ? "bg-green-500" : "bg-red-500";
+  const backgroundColor
+    = latestMessage.type === AlertType.SUCCESS
+    ? "bg-gradient-to-b from-green-500 to-green-700"
+    : "bg-gradient-to-b from-red-400 to-red-700";
 
   return (
     <div
