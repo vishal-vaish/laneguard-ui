@@ -20,6 +20,7 @@ export interface CreateGateDataType {
   entryCameraId: string;
   exitCameraId: string;
 }
+
 export type StatusType = 'IN_PROGRESS' | 'COMPLETED';
 
 export interface VehicleAccessLog {
@@ -32,6 +33,11 @@ export interface VehicleAccessLog {
   entryCamera: CameraDataType;
   exitCamera: CameraDataType;
   status: StatusType;
+  entryDetectionImagePath:string;
+  entryLicensePlateImagePath:string;
+  exitDetectionImagePath:string;
+  exitLicensePlateImagePath:string;
+  vehicleType: VehicleType;
 }
 
 export interface VehicleMonitorLog {
@@ -44,9 +50,24 @@ export interface VehicleMonitorLog {
   entryCameraIpAddress: string;
   exitCameraIpAddress: string;
   status: StatusType;
+  entryDetectionImagePath:string;
+  entryLicensePlateImagePath:string;
+  exitDetectionImagePath:string;
+  exitLicensePlateImagePath:string;
+  vehicleType: VehicleType;
 }
 
 export enum AlertType {
   SUCCESS = "SUCCESS",
   FAILURE = "FAILURE"
+}
+
+export enum VehicleType {
+  UNKNOWN = "Unknown",
+  OTHER_VEHICLE = "Other vehicle",
+  SMALL_SIZED_VEHICLE = "Small-sized vehicle",
+  LARGE_SIZED_VEHICLE = "Large-sized vehicle",
+  PEDESTRIAN_TRIGGER = "Pedestrian trigger",
+  TWO_WHEELER_TRIGGER = "Two-wheeler trigger",
+  TRICYCLE = "Tricycle"
 }

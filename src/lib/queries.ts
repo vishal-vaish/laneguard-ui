@@ -1,8 +1,8 @@
 import axios from "axios";
 import {CameraDataType, CreateGateDataType, GateDataType} from "@/lib/types";
 
-const baseUrl = "http://localhost:8080/api"
-export const WEBSOCKET_URL = 'ws://localhost:8080/lane-guard';
+const baseUrl = "http://localhost:8888/api"
+export const WEBSOCKET_URL = 'ws://localhost:8888/lane-guard';
 export const ALERT_TOPIC = '/topic/alerts';
 export const MONITOR_TOPIC = '/topic/monitor';
 
